@@ -1,3 +1,7 @@
+# Laverna Docker image
+
+[Laverna](https://laverna.cc/) Markdown note taking app focused on privacy.
+
 The environment variables have the following defaults:
 
 |Variable                 | Default                                          |
@@ -28,5 +32,5 @@ Build the image with this command:
 
 ## About
 
-Written by Daniel Dickinson, released under the [MIT license](http://opensource.org/licenses/MIT).
+Written by Martin Swanepoel, released under the [MIT license](http://opensource.org/licenses/MIT).
 Derived from work by [Daniel Dickinson](https://github.com/cshoredaniel/docker-lighttpd), released under the [MIT license](http://opensource.org/licenses/MIT).
