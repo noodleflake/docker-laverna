@@ -1,0 +1,13 @@
+lighttpd:
+	build:.
+image: cshore/lighttpd
+env_file:
+	- ./custom.env
+volumes:
+	- <home-directory>:/var/www/html
+	- <ssl-directory>:/etc/lighttpd/ssl
+	- <users-directory>:/etc/lighttpd/users
+	- /dev/log:/dev/log
+ports:
+	- <http-port>:8080
+	- <https-port>:4443
