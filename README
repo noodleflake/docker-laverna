@@ -24,12 +24,6 @@ This command will build the image:
 
 	$ sudo docker build .
 
-### Build with Docker Compose
-
-Build the image with this command:
-
-	$ sudo docker-compose build
-
 ## About
 
 Written by Martin Swanepoel, released under the [MIT license](http://opensource.org/licenses/MIT).
