@@ -54,11 +54,11 @@ elif [ "$LIGHTTPD_MOD_AUTH_DEFAULT" = "enable" ]; then
 fi
 if [ -n "$LIGHTTPD_SSL_PEMFILE" ] && [ -r "$LIGHTTPD_SSL_PEMFILE" ]; then
 	echo "\$SERVER[\"socket\"] == \":6443\" {"
-	echo "server.use-ipv6 = \"$LIGHTTPD_USE_IPV6\""
+	echo "server.use-ipv6 = \"disable\""
 	echo "ssl.engine = \"enable\""
-	echo "ssl.pemfile = \"$LIGHTTPD_SSL_PEMFILE\""
+	echo "ssl.pemfile = \"/etc/lighttpd/ssl/$LIGHTTPD_SSL_PEMFILE\""
 	if [ -n "$LIGHTTPD_SSL_CAFILE" ] && [ -r "$LIGHTTPD_SSL_CAFILE" ]; then
-		echo "ssl.ca-file = \"$LIGHTTPD_SSL_CAFILE\""
+		echo "ssl.ca-file = \"/etc/lighttpd/ssl/$LIGHTTPD_SSL_CAFILE\""
 	fi
 	echo "}"
 fi

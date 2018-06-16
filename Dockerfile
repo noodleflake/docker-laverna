@@ -9,6 +9,9 @@ RUN wget https://github.com/Laverna/static-laverna/archive/gh-pages.zip -O /var/
         && mv `ls` laverna
 LABEL maintainer="martinswanepoel88@gmail.com"
 
+ENV LIGHTTPD_SSL_PEMFILE="" \
+ LIGHTTPD_SSL_CAFILE=""
+
 WORKDIR /tmp/workdir
 COPY assets assets
 COPY build.sh build.sh
