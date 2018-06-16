@@ -1,6 +1,6 @@
 # Laverna Docker image
 
-[Laverna](https://laverna.cc/) Markdown note taking app focused on privacy.
+[Laverna](https://laverna.cc/) - Markdown note taking app focused on privacy.
 
 The environment variables have the following defaults:
 
@@ -23,6 +23,13 @@ First clone or download the [noodleflake/docker-laverna](https://github.com/nood
 This command will build the image:
 
 	$ sudo docker build .
+
+### Run with Docker
+
+This command will run the image:
+
+	$ docker run -d -p 80:6080 --name laverna noodleflake/laverna
+	
 
 ## About
 
