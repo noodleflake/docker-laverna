@@ -35,7 +35,7 @@ This command will run the image:
 
 ### HTTPS:
 
-	$ docker run -d -p 443:6443 -name laverna \
+	$ docker run -d -p 443:6443 --name laverna \
 	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
 	  -e LIGHTTPD_SSL_CAFILE="/etc/lighttpd/ssl/certificate_authority.pem" \
 	  -v /etc/ssl/certs:/etc/lighttpd/ssl noodleflake/laverna
