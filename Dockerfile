@@ -14,7 +14,7 @@ RUN wget https://github.com/Laverna/static-laverna/archive/gh-pages.zip -O /var/
 	   -subj '/C=ZA/ST=WC/L=STAR/O=laverna-docker/OU=laverna-docker/CN=localhost/emailAddress=none@none.com' \
 	&& mkdir /etc/lighttpd/ssl \
 	&& cat lighttpd.key lighttpd.crt > /etc/lighttpd/ssl/lighttpd.pem \
-	&& rm lighttpd.key lighttpd.crt
+	&& rm lighttpd.key lighttpd.crt openssl.cnf
 LABEL maintainer="martinswanepoel88@gmail.com"
 
 ENV LIGHTTPD_SSL_PEMFILE="" \
