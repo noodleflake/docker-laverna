@@ -10,8 +10,8 @@ The environment variables have the following defaults:
 |LIGHTTPD_SERVER_PORT     | 6080                                             |
 |LIGHTTPD_SSL_PORT        | 6443                                             |
 |LIGHTTPD_SSL_ADDRESS     | ""                                               |
-|LIGHTTPD_SSL_PEMFILE     | /etc/lighttpd/ssl/lighttpd.pem                   |
-|LIGHTTPD_SSL_CAFILE      | /etc/lighttpd/ssl/ca-cert.pem                    |
+|LIGHTTPD_SSL_PEMFILE     | ""                                               |
+|LIGHTTPD_SSL_CAFILE      | ""                                               |
 
 ## Build
 
