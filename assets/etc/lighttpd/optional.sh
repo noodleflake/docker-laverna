@@ -4,6 +4,9 @@ echo "var.basedir = \"/var/www\""
 if [ -n "$LIGHTTPD_ADDITIONAL_CONF" ]; then
 	echo "include \"$LIGHTTPD_ADDITIONAL_CONF\""
 fi
+if [ -z "$LIGHTTPD_SSL_PEMFILE" ]; then
+        LIGHTTPD_SSL_PEMFILE=true
+fi
 if [ -z "$LIGHTTPD_USERNAME" ]; then
         LIGHTTPD_USERNAME="lighttpd"
 fi
