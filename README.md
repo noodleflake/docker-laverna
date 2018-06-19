@@ -14,9 +14,6 @@ The environment variables have the following defaults:
 |LIGHTTPD_SSL_PEMFILE     | "/etc/lighttpd/ssl/lighttpd.pem"                 |
 |LIGHTTPD_SSL_CAFILE      | ""                                               |
 
-
-*SSL will only work if LIGHTTPD_SSL_PEMFILE is populated, you can mount a volume containing the certs. See below HTTPS example*
-
 ## Build
 
 First clone or download the [noodleflake/docker-laverna](https://github.com/noodleflake/docker-laverna) GitHub repository, open a shell in the newly created `docker-laverna` directory, then build the image and run a container using Docker or Docker Compose, as explained below.
