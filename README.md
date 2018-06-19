@@ -13,6 +13,7 @@ The environment variables have the following defaults:
 |LIGHTTPD_SSL_PEMFILE     | ""                                               |
 |LIGHTTPD_SSL_CAFILE      | ""                                               |
 
+
 ###SSL will only work if LIGHTTPD_SSL_PEMFILE is populated, you can mount a volume containing the certs. See below HTTPS example
 
 ## Build
@@ -28,11 +29,11 @@ This command will build the image:
 ### Run with Docker
 
 This command will run the image:
-###HTTP:
+### HTTP:
 
 	$ docker run -d -p 80:6080 --name laverna noodleflake/laverna
 
-###HTTPS:
+### HTTPS:
 
 	$ docker run -p 443:6443 -name laverna \
 	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
