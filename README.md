@@ -6,12 +6,14 @@ The environment variables have the following defaults:
 
 |Variable                 | Default                                          |
 |-------------------------|--------------------------------------------------|
-|LIGHTTPD_SERVER_ADDRESS  | "0.0.0.0"                                        |
+|LIGHTTPD_SERVER_ADDRESS  | ""                                               |
 |LIGHTTPD_SERVER_PORT     | 6080                                             |
-|LIGHTTPD_SSL_ADDRESS     | "0.0.0.0" (Depends on LIGHTTPD_SSL_PEMFILE)      |
-|LIGHTTPD_SSL_PORT        | 6443      (Depends on LIGHTTPD_SSL_PEMFILE)      |
+|LIGHTTPD_SSL_ADDRESS     | ""                                               |
+|LIGHTTPD_SSL_PORT        | 6443                                             |
 |LIGHTTPD_SSL_PEMFILE     | ""                                               |
 |LIGHTTPD_SSL_CAFILE      | ""                                               |
+
+###SSL will only work if LIGHTTPD_SSL_PEMFILE is populated, you can mount a volume containing the certs. See below HTTPS example
 
 ## Build
 
