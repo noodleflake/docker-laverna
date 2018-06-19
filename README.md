@@ -27,7 +27,7 @@ This command will build the image:
 
 This command will run the image:
 ###UNSECURE
-	`$ docker run -d -p 80:6080 --name laverna noodleflake/laverna`
+	$ docker run -d -p 80:6080 --name laverna noodleflake/laverna
 ###SECURE
 	`$ docker run -p 443:6443 -name laverna \
 	$ -e LIGHTTPD_USE_SSL="enable" \
