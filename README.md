@@ -33,7 +33,19 @@ This command will run the image:
 
 	$ docker run -d -p 80:6080 --name laverna noodleflake/laverna
 
-### HTTPS:
+### HTTPS - self-signed as 'localhost':
+
+	$ docker run -d -p 443:6443 --name laverna \
+	  -e LIGHTTPD_SSL_ENABLE=true \
+	  -v /etc/ssl/certs:/etc/lighttpd/ssl noodleflake/laverna
+
+### HTTPS - certificate on volume:
+
+	$ docker run -d -p 443:6443 --name laverna \
+	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
+	  -v /etc/ssl/certs:/etc/lighttpd/ssl noodleflake/laverna
+
+### HTTPS - certificate with authority on volume:
 
 	$ docker run -d -p 443:6443 --name laverna \
 	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
