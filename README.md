@@ -15,7 +15,7 @@ The environment variables have the following defaults:
 |LIGHTTPD_SSL_CAFILE      | ""                                               |
 
 
-###SSL will only work if LIGHTTPD_SSL_PEMFILE is populated, you can mount a volume containing the certs. See below HTTPS example
+### SSL will only work if LIGHTTPD_SSL_PEMFILE is populated, you can mount a volume containing the certs. See below HTTPS example
 
 ## Build
 
