@@ -13,6 +13,12 @@ fi
 if [ -z "$LIGHTTPD_DOCROOT" ]; then
         LIGHTTPD_DOCROOT="/var/www/laverna"
 fi
+if [ -z "$LIGHTTPD_SSL_PEMFILE" ] && ([ "$LIGHTTPD_SSL_ENABLE" = true ] || [ "$LIGHTTPD_SSL_ENABLE" = "enable" ]); then
+        LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/lighttpd.pem"
+fi
+if [ -z "$LIGHTTPD_SSL_CAFILE" ] && ([ "$LIGHTTPD_SSL_ENABLE" = true ] || [ "$LIGHTTPD_SSL_ENABLE" = "enable" ]); then
+        LIGHTTPD_SSL_CAFILE="/etc/lighttpd/ssl/ca-cert.pem"
+fi
 echo "server.username = \"$LIGHTTPD_USERNAME\""
 echo "server.groupname = \"$LIGHTTPD_GROUPNAME\""
 echo "server.document-root = \"$LIGHTTPD_DOCROOT\""
@@ -52,7 +58,7 @@ elif [ "$LIGHTTPD_MOD_AUTH_DEFAULT" = "enable" ]; then
 	echo "auth.backend.$LIGHTTPD_AUTH_BACKEND.userfile = \"/etc/lighttpd/users/lighttpd.users\""
 	echo "auth.require = $LIGHTTPD_AUTH_REQUIRE"
 fi
-if [ -n "$LIGHTTPD_SSL_PEMFILE" ] && [ -r "$LIGHTTPD_SSL_PEMFILE" ]; then
+if ([ -n "$LIGHTTPD_SSL_PEMFILE" ] && [ -r "$LIGHTTPD_SSL_PEMFILE" ]) || [ "$LIGHTTPD_SSL_ENABLE" = true ] || [ "$LIGHTTPD_SSL_ENABLE" = "enable" ]; then
 	echo "\$SERVER[\"socket\"] == \":6443\" {"
 	echo "server.use-ipv6 = \"disable\""
 	echo "ssl.engine = \"enable\""
