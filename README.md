@@ -33,10 +33,10 @@ This command will run the image:
 ###HTTPS:
 
 	$ docker run -p 443:6443 -name laverna \
-	$ -e LIGHTTPD_USE_SSL="enable" \
-	$ -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
-	$ -e LIGHTTPD_SSL_CAFILE="/etc/lighttpd/ssl/certificate_authority.pem" -v /etc/ssl/certs:/etc/lighttpd/ssl \
-	$ noodleflake/laverna
+	  -e LIGHTTPD_USE_SSL="enable" \
+	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
+	  -e LIGHTTPD_SSL_CAFILE="/etc/lighttpd/ssl/certificate_authority.pem" -v /etc/ssl/certs:/etc/lighttpd/ssl \
+	  noodleflake/laverna
 
 ## About
 
