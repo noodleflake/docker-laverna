@@ -8,10 +8,10 @@ The environment variables have the following defaults:
 |-------------------------|--------------------------------------------------|
 |LIGHTTPD_SERVER_ADDRESS  | ""                                               |
 |LIGHTTPD_SERVER_PORT     | 6080                                             |
-|LIGHTTPD_SSL_ENABLE      | true
+|LIGHTTPD_SSL_ENABLE      | true                                             |
 |LIGHTTPD_SSL_ADDRESS     | ""                                               |
 |LIGHTTPD_SSL_PORT        | 6443                                             |
-|LIGHTTPD_SSL_PEMFILE     | ""                                               |
+|LIGHTTPD_SSL_PEMFILE     | "/etc/lighttpd/ssl/lighttpd.pem"                 |
 |LIGHTTPD_SSL_CAFILE      | ""                                               |
 
 
@@ -36,9 +36,7 @@ This command will run the image:
 
 ### HTTPS - Self-signed as 'localhost':
 
-	$ docker run -d -p 443:6443 --name laverna \
-	  -e LIGHTTPD_SSL_ENABLE=true \
-	  -v /etc/ssl/certs:/etc/lighttpd/ssl noodleflake/laverna
+	$ docker run -d -p 443:6443 --name laverna noodleflake/laverna
 
 ### HTTPS - Certificate on volume:
 
