@@ -8,6 +8,7 @@ The environment variables have the following defaults:
 |-------------------------|--------------------------------------------------|
 |LIGHTTPD_SERVER_ADDRESS  | ""                                               |
 |LIGHTTPD_SERVER_PORT     | 6080                                             |
+|LIGHTTPD_SSL_ENABLE      | true
 |LIGHTTPD_SSL_ADDRESS     | ""                                               |
 |LIGHTTPD_SSL_PORT        | 6443                                             |
 |LIGHTTPD_SSL_PEMFILE     | ""                                               |
@@ -33,19 +34,19 @@ This command will run the image:
 
 	$ docker run -d -p 80:6080 --name laverna noodleflake/laverna
 
-### HTTPS - self-signed as 'localhost':
+### HTTPS - Self-signed as 'localhost':
 
 	$ docker run -d -p 443:6443 --name laverna \
 	  -e LIGHTTPD_SSL_ENABLE=true \
 	  -v /etc/ssl/certs:/etc/lighttpd/ssl noodleflake/laverna
 
-### HTTPS - certificate on volume:
+### HTTPS - Certificate on volume:
 
 	$ docker run -d -p 443:6443 --name laverna \
 	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
 	  noodleflake/laverna
 
-### HTTPS - certificate with authority on volume:
+### HTTPS - Certificate with authority on volume:
 
 	$ docker run -d -p 443:6443 --name laverna \
 	  -e LIGHTTPD_SSL_PEMFILE="/etc/lighttpd/ssl/laverna_host_cert.pem" \
